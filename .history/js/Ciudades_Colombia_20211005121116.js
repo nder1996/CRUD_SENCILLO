@@ -1313,7 +1313,7 @@ $(document).ready(function(){
         $.each(data, function(id,Elemento) {
             i+=1;
             Departamento = JSON.stringify(Elemento.departamento);
-            //Departamento = Departamento.slice(1,(Departamento.length)-1);
+            Departamento = Departamento.slice(1,(Departamento.length)-1);
 
             console.log("Departamento : "+Departamento);
             //console.log((JSON.stringify(Elemento.departamento)).slice(0,Elemento.Departamento));

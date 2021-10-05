@@ -1,0 +1,21 @@
+   //var $select = $('.Principal');
+
+    //alert(options);
+    /*$.getJSON('Json/colombia.json', function(data) {
+        $.each(data, function(id, departamento) {
+            $(".Principal").after('<option name="' + id + '">' + departamento + '</option>');
+        //}); // close each()
+    //}); // close getJSON()
+  // close getJSON()
+
+   /*for(var item in Caido){
+       console.log(item," - ",Caido)
+      // console.log(Ciudad[item].departamento)
+       $(".Principal").after(`<option value='${item}'>Caido</option>`)
+      /* $('.Ciudad').html("<option value="1">Elige Tu ciudad</option>") */
+    //}
+    
+  
+
+
+  /*  $('.Ciudad').html(" <option value="1">Two</option>");*/

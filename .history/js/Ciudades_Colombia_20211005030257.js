@@ -1307,17 +1307,11 @@ $(document).ready(function(){
 
     //let ciudad = JSON.parse(Colombia)
 
-    var i = 0 ;
-
+    
     $.getJSON('Json/Colombia.json', function(data) {
-        $.each(data, function(id,Elemento) {
-            i+=1;
-            Departamento = JSON.stringify(Elemento.departamento);
-            //Departamento = Departamento.slice(1,(Departamento.length)-1);
+        $.each(data, function(departamento) {
 
-            console.log("Departamento : "+Departamento);
-            //console.log((JSON.stringify(Elemento.departamento)).slice(0,Elemento.Departamento));
-            $(".Principal").after('<option name="' + id + '">' + Departamento.slice(1,(Departamento.length)-1) + '</option>');
+            $(".Principal").after('<option name="' + id + '">' + departamento + '</option>');
         }); // close each()
     }); // close getJSON()
     //|console.log(ciudad)

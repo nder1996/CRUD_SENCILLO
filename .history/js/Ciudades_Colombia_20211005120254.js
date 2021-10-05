@@ -1313,11 +1313,9 @@ $(document).ready(function(){
         $.each(data, function(id,Elemento) {
             i+=1;
             Departamento = JSON.stringify(Elemento.departamento);
-            //Departamento = Departamento.slice(1,(Departamento.length)-1);
-
-            console.log("Departamento : "+Departamento);
+            console.log("Departamento : "+Departamento.replace(" " ",''));
             //console.log((JSON.stringify(Elemento.departamento)).slice(0,Elemento.Departamento));
-            $(".Principal").after('<option name="' + id + '">' + Departamento.slice(1,(Departamento.length)-1) + '</option>');
+            //$(".Principal").after('<option name="' + id + '">' + (JSON.stringify(departamento.departamento).replace(" "" ","")) + '</option>');
         }); // close each()
     }); // close getJSON()
     //|console.log(ciudad)

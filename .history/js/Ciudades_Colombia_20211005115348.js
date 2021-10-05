@@ -1310,14 +1310,10 @@ $(document).ready(function(){
     var i = 0 ;
 
     $.getJSON('Json/Colombia.json', function(data) {
-        $.each(data, function(id,Elemento) {
+        $.each(data, function(id,departamento) {
             i+=1;
-            Departamento = JSON.stringify(Elemento.departamento);
-            //Departamento = Departamento.slice(1,(Departamento.length)-1);
-
-            console.log("Departamento : "+Departamento);
-            //console.log((JSON.stringify(Elemento.departamento)).slice(0,Elemento.Departamento));
-            $(".Principal").after('<option name="' + id + '">' + Departamento.slice(1,(Departamento.length)-1) + '</option>');
+            console.log()
+            //$(".Principal").after('<option name="' + id + '">' + (JSON.stringify(departamento.departamento).replace(" "" ","")) + '</option>');
         }); // close each()
     }); // close getJSON()
     //|console.log(ciudad)

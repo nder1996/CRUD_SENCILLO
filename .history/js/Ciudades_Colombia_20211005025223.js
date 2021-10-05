@@ -1306,18 +1306,9 @@ $(document).ready(function(){
     $('.Ciudad').html("<option class='Principal' selected>Elige Tu ciudad</option>")
 
     //let ciudad = JSON.parse(Colombia)
-
-    var i = 0 ;
-
     $.getJSON('Json/Colombia.json', function(data) {
-        $.each(data, function(id,Elemento) {
-            i+=1;
-            Departamento = JSON.stringify(Elemento.departamento);
-            //Departamento = Departamento.slice(1,(Departamento.length)-1);
-
-            console.log("Departamento : "+Departamento);
-            //console.log((JSON.stringify(Elemento.departamento)).slice(0,Elemento.Departamento));
-            $(".Principal").after('<option name="' + id + '">' + Departamento.slice(1,(Departamento.length)-1) + '</option>');
+        $.each(data, function(id, departamento) {
+            $(".Principal").append('<option name="' + id + '">' + departamento.id + '</option>');
         }); // close each()
     }); // close getJSON()
     //|console.log(ciudad)
