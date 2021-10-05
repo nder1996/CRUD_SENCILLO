@@ -1,0 +1,42 @@
+.contenedor{
+  /*  border:5px solid red;*/
+    width: 50%;
+    height: 300px;
+    margin: auto;
+}
+
+.input-group{
+    width: 300px;
+    height:50px;
+}
+
+.input_button{
+   /* border:5px solid red;*/
+    height:100px;
+}
+
+.input_button section{
+    margin-left: 20px;
+    height: 100px;
+    /*border:5px solid red;*/
+}
+
+.input_button section button{
+    width:150px;
+    height:50px;
+    font-size: 24px;
+}
+
+table tbody,table thead{
+    text-align: center;
+}
+
+ .Formulario_Agregar .col-md-4{
+    border:5px solid red;
+    width: 100%;
+}
+
+.modal-title{
+    border:5px solid black;
+    width: 100;
+}
