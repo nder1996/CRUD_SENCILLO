@@ -110,14 +110,16 @@ $resultado = $sentencia_select->fetchAll();
                                 </div>
                             </div>
                             <div class="col-md-4">
+                                <label for="validationServer02" class="form-label">Departamento</label>
+                                <select class="Departamento form-select" aria-label="Default select example">
+                                </select>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="validationServer02" class="form-label">Ciudad</label>
                                 <select class="Ciudad form-select" aria-label="Default select example">
-                                    <!--
-                                    <option selected>Open this select menu</option>
-                                    <>One</>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    -->
                                 </select>
                                 <div class="valid-feedback">
                                     Looks good!
