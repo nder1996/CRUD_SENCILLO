@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    $('.Departamento').html("<option class='Nombre_Departamento' selected>Elige tu departamento</option>")
-    $('.Ciudad').html("<option class='Nombre_Ciudad' selected>Elige tu ciudad</option>")
+    $('.Departamento').html("<option value='0' class='Nombre_Departamento'>Elige tu departamento</option>")
+    $('.Ciudad').html("<option value='0' class='Nombre_Ciudad'>Elige tu ciudad</option>")
 
     $.getJSON('Json/Info_Colombia.json', function (data) {
         $.each(data, function (id, Elemento) {
@@ -17,32 +17,81 @@ $(document).ready(function () {
         });
     });
 
-    //$(".Nuevo_Cliente").click(function () {
-        //    jQuery("#Formulario_Agregar").validate({
-          //      rules: {
-            //        nombre: {
-              //          required: true
-                //    }
-                //},
-                ///messages: {
-                   ///nombre: {
-                      //  required: "Ingresa Tu Nombre"
-                    //}
-                //}
-            //})
-        
-        
-        
-      
 
-    //})
 
-   
+    jQuery.validator.addMethod('name_rule', function (value, element) {
+        if (/^[a-zA-Z]+[a-zA-Z]+$/.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    });
+
+    jQuery.validator.addMethod('lastname_rule', function (value, element) {
+        if (/^[a-zA-ZÀ-ÿ\s]{3,15}$/.test(value)) {
+            return true;
+        } else {
+            return false;
+        };
+    });
+
+    $('#Formulario_Agregar').validate({
+        rules: {
+            nombre: {
+                required: true,
+                name_rule: true
+            },
+            apellido: {
+                required: true,
+                lastname_rule: true
+            },
+            telefono: {
+                required: true,
+                minlength: 10,
+                maxlength: 10,
+                phoneUS: true
+            },
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            nombre: {
+                required: "Ingresa Tu Nombre"
+            },
+            apellido: {
+                required: "Ingresa Tu Apellido"
+            },
+            telefono: {
+                required: "Ingresa Tu Telefono"
+            },
+            email: {
+                required: "Ingresa Tu Email"
+            }
+        }
+    })
+
+    $(".Nuevo_Cliente").click(function () {
+        if($(".Departamento").val()!=="0"){
+            $('#departamento').html("<span class='texto_verde'>Correcto</span>")
+        }else{
+            $('#departamento').html("<span class='texto'>Selecciona una opcion</span>")
+        }
+
+        if($(".Ciudad").val()!=="0"){
+            $('#ciudad').html("<span class='texto_verde'>Correcto</span>")
+        }else{
+            $('#ciudad').html("<span class='texto'>Selecciona una opcion</span>")
+        }
+
+
+    })
+
+
+
+
 
 
 
 });
-
-
-
-

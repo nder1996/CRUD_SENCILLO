@@ -43,3 +43,15 @@ table tbody,table thead{
 .modal-title{
     width: 100%;
 }
+
+.error{
+    color:red;
+}
+
+.texto{
+    color:red;
+}
+
+.texto_verde{
+    color:green;
+}

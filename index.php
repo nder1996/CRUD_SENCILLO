@@ -80,39 +80,46 @@ $resultado = $sentencia_select->fetchAll();
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form class="Formulario_Agregar">
+                            <form id="Formulario_Agregar">
                                 <div class="col-md-4">
                                     <label for="validationServer01" class="form-label">Nombre</label>
                                     <input type="text" name="nombre" id="nombre" class="Nombre form-control" placeholder="Mark">
                                 </div>
-                                <div class="col-md-4 mt-5">
+                                <div class="col-md-4 mt-2">
                                     <label for="validationServer02" class="form-label">Apellido</label>
                                     <input type="text" name="apellido" class="Apellido form-control" placeholder="Otto" required>
                                 </div>
-                                <div class="col-md-4 mt-5">
+                                <div class="col-md-4 mt-2">
                                     <label for="validationServer02" class="form-label">Telefono</label>
                                     <input type="tel" name="telefono" class="Telefono form-control" placeholder="Otto" required>
                                 </div>
-                                <div class="col-md-4 mt-5">
+                                <div class="col-md-4 mt-2">
                                     <label for="validationServer02" class="form-label">Correo Electronico</label>
                                     <input type="email" name="email" class="Correo form-control" placeholder="Otto" required>
                                 </div>
-                                <div class="col-md-4 mt-5">
-                                    <label for="validationServer02" class="form-label">Departamento</label>
-                                    <select class="Departamento form-select" aria-label="Default select example">
+                                <div class="col-md-4 mt-2">
+                                    <label for="departamento_colombia" class="Colombia_D form-label mt-3 mb-3">Departamento</label>
+                                    <select id="departamento_colombia"  name="departamento_colombia" class="Departamento form-select"  required>
                                     </select>
+                                    <label id="departamento" for="">
+
+                                    </label>
                                 </div>
-                                <div class="col-md-4 mt-5">
-                                    <label for="validationServer02" class="form-label">Ciudad</label>
-                                    <select class="Ciudad form-select" aria-label="Default select example">
+                                <div class="col-md-4 mt-0">
+                                    <label for="ciudad_colombia" class="Colombia_C form-label mt-3 mb-3">Ciudad</label>
+                                    <select id="ciudad_colombia"  name="ciudad_colombia" class="Ciudad form-select" required>
                                     </select>
+                                    <label id="ciudad" for="">
+
+                                    </label>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="Nuevo_Cliente btn btn-primary">Agregar Cliente</button>
-                            <input type="submit" value="Send Email">
+                            <input type="submit"  class="Nuevo_Cliente btn btn-primary" value="Agregar Cliente">
+                            <!--<button class="Nuevo_Cliente btn btn-primary">Comprobar</button>
+                --->
                         </div>
                     </div>
                 </form>
@@ -129,26 +136,11 @@ $resultado = $sentencia_select->fetchAll();
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-         $(document).ready(function() {
-               $('#Formulario_Agregar').validate({
-                rules: {
-                    nombre: {
-                        required: true
-                    }
-                },
-                messages: {
-                    nombre: {
-                        required: "Ingresa Tu Nombre"
-                    }
-                }
-            })
-            });
-     
-    </script>
-    <script src="js/Jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="js/Jquery.js"></script>
+
 </body>
 
 </html>
