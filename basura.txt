@@ -19,3 +19,24 @@
 
 
   /*  $('.Ciudad').html(" <option value="1">Two</option>");*/
+
+
+  
+    $(".Nombre").blur(function(){
+        //if($("#Nombre").val()==""){
+         //   alert("Esta Vacio")
+        //}
+        if()
+        
+    })
+
+
+    //$('.Nuevo_Cliente').click(function(){
+           //alert("el campo no puede estar vacio")
+
+
+       // if( $('.Nombre').val() == ""){
+            
+        //}
+    //})
+ 

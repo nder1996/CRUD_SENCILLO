@@ -18,13 +18,17 @@
 .input_button section{
     margin-left: 20px;
     height: 100px;
-    /*border:5px solid red;*/
 }
 
 .input_button section button{
     width:150px;
     height:50px;
     font-size: 24px;
+}
+
+#Formulario_Agregar .col-md-4{
+    /*border:5px solid red;*/
+    width: 100%;
 }
 
 table tbody,table thead{

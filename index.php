@@ -44,6 +44,7 @@ $resultado = $sentencia_select->fetchAll();
                     <th scope="col">NOMBRE</th>
                     <th scope="col">APELLIDO</th>
                     <th scope="col">TELEFONO</th>
+                    <th scope="col">DEPARTAMENTO</th>
                     <th scope="col">CIUDAD</th>
                     <th scope="col">CORREO</th>
                     <th scope="col">ACCION</th>
@@ -56,6 +57,7 @@ $resultado = $sentencia_select->fetchAll();
                         <th><?php echo $fila['nombre']; ?></th>
                         <th><?php echo $fila['apellido']; ?></th>
                         <th><?php echo $fila['telefono']; ?></th>
+                        <th><?php echo $fila['departamento']; ?></th>
                         <th><?php echo $fila['ciudad']; ?></th>
                         <th><?php echo $fila['correo']; ?></th>
                         <th><a href="update.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary">Editar</a>
@@ -71,72 +73,81 @@ $resultado = $sentencia_select->fetchAll();
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title text-center" id="exampleModalLabel">Nuevo Cliente</h3>
-                        <section class="Prueba_Jquery">
+                <form method="post" id="Formulario_Agregar" action="">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title text-center" id="exampleModalLabel">Nuevo Cliente</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="Formulario_Agregar">
+                                <div class="col-md-4">
+                                    <label for="validationServer01" class="form-label">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" class="Nombre form-control" placeholder="Mark">
+                                </div>
+                                <div class="col-md-4 mt-5">
+                                    <label for="validationServer02" class="form-label">Apellido</label>
+                                    <input type="text" name="apellido" class="Apellido form-control" placeholder="Otto" required>
+                                </div>
+                                <div class="col-md-4 mt-5">
+                                    <label for="validationServer02" class="form-label">Telefono</label>
+                                    <input type="tel" name="telefono" class="Telefono form-control" placeholder="Otto" required>
+                                </div>
+                                <div class="col-md-4 mt-5">
+                                    <label for="validationServer02" class="form-label">Correo Electronico</label>
+                                    <input type="email" name="email" class="Correo form-control" placeholder="Otto" required>
+                                </div>
+                                <div class="col-md-4 mt-5">
+                                    <label for="validationServer02" class="form-label">Departamento</label>
+                                    <select class="Departamento form-select" aria-label="Default select example">
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mt-5">
+                                    <label for="validationServer02" class="form-label">Ciudad</label>
+                                    <select class="Ciudad form-select" aria-label="Default select example">
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="Nuevo_Cliente btn btn-primary">Agregar Cliente</button>
+                            <input type="submit" value="Send Email">
+                        </div>
+                    </div>
+                </form>
 
-                        </section>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="Formulario_Agregar">
-                            <div class="col-md-4">
-                                <label for="validationServer01" class="form-label">Nombre</label>
-                                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationServer02" class="form-label">Apellido</label>
-                                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationServer02" class="form-label">Telefono</label>
-                                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationServer02" class="form-label">Correo Electronico</label>
-                                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationServer02" class="form-label">Departamento</label>
-                                <select class="Departamento form-select" aria-label="Default select example">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationServer02" class="form-label">Ciudad</label>
-                                <select class="Ciudad form-select" aria-label="Default select example">
-                                </select>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
-                </div>
+
             </div>
         </div>
+
+
+
+
+
+
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/Ciudades_Colombia.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+         $(document).ready(function() {
+               $('#Formulario_Agregar').validate({
+                rules: {
+                    nombre: {
+                        required: true
+                    }
+                },
+                messages: {
+                    nombre: {
+                        required: "Ingresa Tu Nombre"
+                    }
+                }
+            })
+            });
+     
+    </script>
+    <script src="js/Jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
