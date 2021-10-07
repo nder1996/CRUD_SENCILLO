@@ -62,18 +62,18 @@ $(document).ready(function () {
 
         if($(".Departamento").val()!=="0"){
             $('#departamento').html("<span class='Mensaje_True'>Correcto</span>")
-            $('.token').css({"color":"green"})
+            $('#departamento_colombia').css({"border":"1px solid rgb(0,128,0,1)"})
         }else{
             $('#departamento').html("<span class='Mensaje_False'>*Selecciona una opcion</span>")
-            $('.token').css({"color":"red"})
+            $('#departamento_colombia').css({"border":"1px solid rgb(255,0,0,1)"})
         }
 
         if($(".Ciudad").val()!=="0"){
             $('#ciudad').html("<span class='Mensaje_True'>Correcto</span>")
-            $('.token').css({"color":"green"})
+            $('#ciudad_colombia').css({"border":"1px solid rgb(0,128,0,1)"})
         }else{
             $('#ciudad').html("<span class='Mensaje_False'>*Selecciona una opcion</span>")
-            $('.token').css({"color":"red"})
+            $('#ciudad_colombia').css({"border":"1px solid rgb(255,0,0,1)"})
         }
 
     })
