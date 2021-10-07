@@ -16,88 +16,67 @@ $(document).ready(function () {
             }
         });
     });
-
-
-
-    jQuery.validator.addMethod('name_rule', function (value, element) {
-        if (/^[a-zA-Z]+[a-zA-Z]+$/.test(value)) {
-            return true;
-        } else {
-            return false;
-        };
-    });
-
-    jQuery.validator.addMethod('lastname_rule', function (value, element) {
-        if (/^[a-zA-ZÀ-ÿ\s]{3,15}$/.test(value)) {
-            return true;
-        } else {
-            return false;
-        };
-    });
-
-    $('#Formulario_Agregar').validate({
-        rules: {
-            nombre: {
-                required: true,
-                name_rule: true
-            },
-            apellido: {
-                required: true,
-                lastname_rule: true
-            },
-            telefono: {
-                required: true,
-                minlength: 10,
-                maxlength: 10,
-                phoneUS: true
-            },
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-            nombre: {
-                required: "Ingresa Tu Nombre",
-                name_rule: "Ingrese nombre valido"
-            },
-            apellido: {
-                required: "Ingresa Tu Apellido",
-                lastname_rule: "Ingrese apellido valido"
-            },
-            telefono: {
-                required: "Ingresa Tu Telefono",
-                minlength: "Deben ser 10 Digitos",
-                maxlength: "Deben ser 10 Digitos",
-                phoneUS: "Solo Numeros"
-
-            },
-            email: {
-                required: "Ingresa Tu Email",
-                email:"Solo email permitido"
-            }
-        }
-    })
-
+  
     $(".Nuevo_Cliente").click(function () {
-        if($(".Departamento").val()!=="0"){
-            $('#departamento').html("<span class='texto_verde'>Correcto</span>")
+       
+        if (/^[a-zA-Z]+[a-zA-Z]+$/.test($("#Nombre").val())){
+            $('#label_nombre').html("<span class='Mensaje_True'>Dato Correcto</span>")
+            $('.valid_nombre').css({"border":"1px solid rgb(0,128,0,1)"})
+            $('.icon_nombre').css({"background-color":"rgb(0,128,0,1)","color":"white"})
         }else{
-            $('#departamento').html("<span class='texto'>*Selecciona una opcion</span>")
+            $('#label_nombre').html("<span class='Mensaje_False'>Nombre Incorrecto</span>")
+            $('.valid_nombre').css({"border":"1px solid rgb(255,0,0,1)"})
+            $('.icon_nombre').css( {"background-color":"rgb(255,0,0,1)","color":"white"})
+        }
+        
+        if(/^[a-zA-ZÀ-ÿ\s]{3,15}$/.test($("#Apellido").val())){
+            $('#label_apellido').html("<span class='Mensaje_True'>Dato Correcto</span>")
+            $('.valid_apellido').css({"border":"1px solid rgb(0,128,0,1)"})
+            $('.icon_apellido').css({"background-color":"rgb(0,128,0,1)" , "color":"white"})
+        }else{
+            $('#label_apellido').html("<span class='Mensaje_False'>Apellido Incorrecto</span>")
+            $('.valid_apellido').css({"border":"1px solid rgb(255,0,0,1)"})
+            $('.icon_apellido').css( {"background-color":"rgb(255,0,0,1)","color":"white"})
+        }
+        if(/^([0-9]{10})$/i.test($("#Telefono").val())){
+            $('#label_telefono').html("<span class='Mensaje_True'>Dato Correcto</span>")
+            $('.valid_telefono').css({"border":"1px solid rgb(0,128,0,1)"})
+            $('.icon_telefono').css({"background-color":"rgb(0,128,0,1)" , "color":"white"})
+        }else{
+            $('#label_telefono').html("<span class='Mensaje_False'>Telefono Incorrecto</span>")
+            $('.valid_telefono').css({"border":"1px solid rgb(255,0,0,1)"})
+            $('.icon_telefono').css( {"background-color":"rgb(255,0,0,1)","color":"white"})
+        }
+        
+        if(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test($("#Email").val())){
+            $('#label_email').html("<span class='Mensaje_True'>Dato Correcto</span>")
+            $('.valid_email').css({"border":"1px solid rgb(0,128,0,1)"})
+            $('.icon_email').css({"background-color":"rgb(0,128,0,1)" , "color":"white"})
+        }else{
+            $('#label_email').html("<span class='Mensaje_False'>Telefono Incorrecto</span>")
+            $('.valid_email').css({"border":"1px solid rgb(255,0,0,1)"})
+            $('.icon_email').css( {"background-color":"rgb(255,0,0,1)","color":"white"})
+        }
+
+
+
+        if($(".Departamento").val()!=="0"){
+            $('#departamento').html("<span class='Mensaje_True'>Correcto</span>")
+            $('.token').css({"color":"green"})
+        }else{
+            $('#departamento').html("<span class='Mensaje_False'>*Selecciona una opcion</span>")
+            $('.token').css({"color":"red"})
         }
 
         if($(".Ciudad").val()!=="0"){
-            $('#ciudad').html("<span class='texto_verde'>Correcto</span>")
+            $('#ciudad').html("<span class='Mensaje_True'>Correcto</span>")
+            $('.token').css({"color":"green"})
         }else{
-            $('#ciudad').html("<span class='texto'>*Selecciona una opcion</span>")
+            $('#ciudad').html("<span class='Mensaje_False'>*Selecciona una opcion</span>")
+            $('.token').css({"color":"red"})
         }
 
-
     })
-
-
-
-
 
 
 

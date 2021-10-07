@@ -10,7 +10,6 @@
 }
 
 .input_button{
-   /* border:5px solid red;*/
     height:100px;
 }
 
@@ -25,44 +24,52 @@
     font-size: 24px;
 }
 
+#Formulario_Agregar .input-group{
+    width: 100%;
+    height: 60px;
+    
+}
+
 #Formulario_Agregar .col-md-4{
-    /*border:5px solid red;*/
     width: 100%;
 }
+
+#Formulario_Agregar .form-control,#Formulario_Agregar .input-group-text{
+    height: 45px;
+    /*border:5px solid red;*/
+}
+
+.label_mensaje{
+   /* border:5px solid red;*/
+    margin: 0;
+    padding:0;
+}
+
+.seccion_1,.seccion_2,.seccion_3,.seccion_4{
+   /* border:5px solid purple;*/
+    margin-top:10px;
+    
+}
+
 
 table tbody,table thead{
     text-align: center;
 }
 
- .Formulario_Agregar .col-md-4{
-    border:5px solid red;
-    width: 100%;
+i{
+    font-size:25px;
+}
+
+.Mensaje_True{
+    color:green;
+}
+
+.Mensaje_False{
+    color:red;
 }
 
 .modal-title{
     width: 100%;
 }
 
-.error{
-    color:red;
-}
 
-.texto{
-    color:red;
-}
-
-.texto_verde{
-    color:green;
-}
-
-.valid{
-
-}
-
-#nombre_label:invalid{
-    color:red;
-}
-
-#nombre:invalid{
-    border:1px solid red;
-}
