@@ -1,5 +1,4 @@
 .contenedor{
-  /*  border:5px solid red;*/
     width: 50%;
     height: 300px;
     margin: auto;
@@ -54,4 +53,16 @@ table tbody,table thead{
 
 .texto_verde{
     color:green;
+}
+
+.valid{
+
+}
+
+#nombre_label:invalid{
+    color:red;
+}
+
+#nombre:invalid{
+    border:1px solid red;
 }

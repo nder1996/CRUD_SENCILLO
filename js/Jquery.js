@@ -58,16 +58,23 @@ $(document).ready(function () {
         },
         messages: {
             nombre: {
-                required: "Ingresa Tu Nombre"
+                required: "Ingresa Tu Nombre",
+                name_rule: "Ingrese nombre valido"
             },
             apellido: {
-                required: "Ingresa Tu Apellido"
+                required: "Ingresa Tu Apellido",
+                lastname_rule: "Ingrese apellido valido"
             },
             telefono: {
-                required: "Ingresa Tu Telefono"
+                required: "Ingresa Tu Telefono",
+                minlength: "Deben ser 10 Digitos",
+                maxlength: "Deben ser 10 Digitos",
+                phoneUS: "Solo Numeros"
+
             },
             email: {
-                required: "Ingresa Tu Email"
+                required: "Ingresa Tu Email",
+                email:"Solo email permitido"
             }
         }
     })
@@ -76,13 +83,13 @@ $(document).ready(function () {
         if($(".Departamento").val()!=="0"){
             $('#departamento').html("<span class='texto_verde'>Correcto</span>")
         }else{
-            $('#departamento').html("<span class='texto'>Selecciona una opcion</span>")
+            $('#departamento').html("<span class='texto'>*Selecciona una opcion</span>")
         }
 
         if($(".Ciudad").val()!=="0"){
             $('#ciudad').html("<span class='texto_verde'>Correcto</span>")
         }else{
-            $('#ciudad').html("<span class='texto'>Selecciona una opcion</span>")
+            $('#ciudad').html("<span class='texto'>*Selecciona una opcion</span>")
         }
 
 

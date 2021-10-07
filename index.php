@@ -69,8 +69,6 @@ $resultado = $sentencia_select->fetchAll();
         </table>
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-
-
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <form method="post" id="Formulario_Agregar" action="">
@@ -82,24 +80,24 @@ $resultado = $sentencia_select->fetchAll();
                         <div class="modal-body">
                             <form id="Formulario_Agregar">
                                 <div class="col-md-4">
-                                    <label for="validationServer01" class="form-label">Nombre</label>
-                                    <input type="text" name="nombre" id="nombre" class="Nombre form-control" placeholder="Mark">
+                                    <label for="nombre" id="nombre_label" class="form-label">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" class="Nombre form-control" placeholder="Andres">
                                 </div>
-                                <div class="col-md-4 mt-2">
-                                    <label for="validationServer02" class="form-label">Apellido</label>
-                                    <input type="text" name="apellido" class="Apellido form-control" placeholder="Otto" required>
+                                <div class="col-md-4 mt-3">
+                                    <label for="apellido" id="apellido_label" class="form-label">Apellido</label>
+                                    <input type="text" name="apellido" id="apellido_label" class="Apellido form-control" placeholder="Felipe Lopez">
                                 </div>
-                                <div class="col-md-4 mt-2">
-                                    <label for="validationServer02" class="form-label">Telefono</label>
-                                    <input type="tel" name="telefono" class="Telefono form-control" placeholder="Otto" required>
+                                <div class="col-md-4 mt-3">
+                                    <label for="telefono" id="telefono_label" class="form-label">Telefono</label>
+                                    <input type="tel" name="telefono" id="telefono_label" class="Telefono form-control" placeholder="3015247814">
                                 </div>
-                                <div class="col-md-4 mt-2">
-                                    <label for="validationServer02" class="form-label">Correo Electronico</label>
-                                    <input type="email" name="email" class="Correo form-control" placeholder="Otto" required>
+                                <div class="col-md-4 mt-3">
+                                    <label for="email"  id="email_label" class="form-label">Correo Electronico</label>
+                                    <input type="email" id="email_label" name="email" class="Correo form-control" placeholder="Prueba@Prueba.com">
                                 </div>
                                 <div class="col-md-4 mt-2">
                                     <label for="departamento_colombia" class="Colombia_D form-label mt-3 mb-3">Departamento</label>
-                                    <select id="departamento_colombia"  name="departamento_colombia" class="Departamento form-select"  required>
+                                    <select id="departamento_colombia"  name="departamento_colombia" class="Departamento form-select">
                                     </select>
                                     <label id="departamento" for="">
 
@@ -107,7 +105,7 @@ $resultado = $sentencia_select->fetchAll();
                                 </div>
                                 <div class="col-md-4 mt-0">
                                     <label for="ciudad_colombia" class="Colombia_C form-label mt-3 mb-3">Ciudad</label>
-                                    <select id="ciudad_colombia"  name="ciudad_colombia" class="Ciudad form-select" required>
+                                    <select id="ciudad_colombia"  name="ciudad_colombia" class="Ciudad form-select">
                                     </select>
                                     <label id="ciudad" for="">
 
