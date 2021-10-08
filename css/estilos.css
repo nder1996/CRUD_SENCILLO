@@ -54,7 +54,14 @@
 
 table tbody,table thead{
     text-align: center;
+    
+    }
+
+.info_table{
+    font-weight: normal;
+    
 }
+
 
 i{
     font-size:25px;
@@ -71,5 +78,3 @@ i{
 .modal-title{
     width: 100%;
 }
-
-
