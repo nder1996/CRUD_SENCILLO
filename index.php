@@ -60,7 +60,7 @@ $resultado = $sentencia_select->fetchAll();*/
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($resultado as $key=>$fila) : ?>
+                <?php foreach ($resultado as $fila) :  ?>
                 <tr>
                     <th class="info_table">
                         <?php echo $fila['id']; ?>
@@ -83,19 +83,17 @@ $resultado = $sentencia_select->fetchAll();*/
                     <th class="info_table">
                         <?php echo $fila['correo']; ?>
                     </th>
-                    <th><a href="update.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary">Editar</a>
-                        <a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
-                    </th>
                     <th>
-                        <?php
-                            echo $key
-                        ?>
+                        <button type="button" onclick="prepare_edit('<?php echo $fila['id'] ?>','<?php echo $fila['nombre'] ?>','<?php echo $fila['apellido'] ?>','<?php echo $fila['telefono'] ?>','<?php echo $fila['departamento'] ?>','<?php echo $fila['ciudad'] ?>','<?php echo $fila['correo'] ?>')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editar" data-bs-whatever="@mdo">Editar</button>
+                        <!--
+                        <a href="update.php?id=<?php echo $fila['id']; ?>" class="btn btn-primary">Editar</a>
+                    -->
+                        <a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn btn-danger">Eliminar</a>
                     </th>
                 </tr>
                 <?php endforeach ?>
             </tbody>
         </table>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editar" data-bs-whatever="@mdo">Open modal for @mdo</button>
         <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -105,11 +103,18 @@ $resultado = $sentencia_select->fetchAll();*/
                     </div>
                     <div class="modal-body">
                         <form id="Formulario_Editar" action="edit.php" method="POST">
+                            <section class="seccion_0">
+                                <label>ID</label>
+                                <div class="input-group mt-3">
+                                    <span class="valid_nombre icon_nombre input-group-text" id="inputGroupPrepend2"><i class="bi bi-person-square"></i></span>
+                                    <input name="id_edit" type="text" class="valid_nombre form-control" id="id_edit" aria-describedby="inputGroupPrepend2" readonly>
+                                </div>
+                            </section>
                             <section class="seccion_1">
                                 <label>Nombre</label>
                                 <div class="input-group mt-3">
                                     <span class="valid_nombre icon_nombre input-group-text" id="inputGroupPrepend2"><i class="bi bi-person-square"></i></span>
-                                    <input name="nombre" type="text" class="valid_nombre form-control" id="Nombre" aria-describedby="inputGroupPrepend2" placeholder="Nombre">
+                                    <input name="nombre_edit" type="text" class="valid_nombre form-control" id="Nombre_edit" aria-describedby="inputGroupPrepend2">
                                 </div>
                                 <label class="label_mensaje" id="label_nombre"></label>
                             </section>
@@ -117,7 +122,7 @@ $resultado = $sentencia_select->fetchAll();*/
                                 <label>Apellido</label>
                                 <div class="input-group mt-3">
                                     <span class="valid_apellido icon_apellido input-group-text" id="inputGroupPrepend2"><i class="bi bi-person-square"></i></span>
-                                    <input name="apellido" type="text" class="valid_apellido form-control" id="Apellido" aria-describedby="inputGroupPrepend2" placeholder="Apellido">
+                                    <input name="apellido_edit" type="text" class="valid_apellido form-control" id="Apellido_edit" aria-describedby="inputGroupPrepend2">
                                 </div>
                                 <label id="label_apellido"></label>
                             </section>
@@ -125,7 +130,7 @@ $resultado = $sentencia_select->fetchAll();*/
                                 <label>Telefono</label>
                                 <div class="input-group mt-3">
                                     <span class="valid_telefono icon_telefono input-group-text" id="inputGroupPrepend2"><i class="bi bi-phone"></i></span>
-                                    <input name="telefono" type="text" class="valid_telefono form-control" id="Telefono" aria-describedby="inputGroupPrepend2" placeholder="Telefono">
+                                    <input name="telefono_edit" type="text" class="valid_telefono form-control" id="Telefono_edit" aria-describedby="inputGroupPrepend2" placeholder="Telefono">
                                 </div>
                                 <label class="label_mensaje" id="label_telefono"></label>
                             </section>
@@ -133,19 +138,19 @@ $resultado = $sentencia_select->fetchAll();*/
                                 <label>Email</label>
                                 <div class="input-group mt-3">
                                     <span class="valid_email icon_email input-group-text" id="inputGroupPrepend2"><i class="bi bi-envelope"></i></span>
-                                    <input name="email" type="text" class="valid_email form-control" id="Email" aria-describedby="inputGroupPrepend2" placeholder="Email">
+                                    <input name="email_edit" type="text" class="valid_email form-control" id="Email_edit" aria-describedby="inputGroupPrepend2" placeholder="Email">
                                 </div>
-                                <label class="label_mensaje" id="label_email"></label>
+                                <label class="label_mensaje_edit" id="label_email"></label>
                             </section>
                             <div class="col-md-4 mt-2">
                                 <label for="departamento_colombia" class="Colombia_D form-label mt-3 mb-3">Departamento</label>
-                                <select id="departamento_colombia" name="departamento_colombia" class="Departamento form-select">
+                                <select id="departamento_colombia_edit" name="departamento_colombia_edit" class="Departamento form-select">
                                 </select>
                                 <label class="label_mensaje" id="departamento"></label>
                             </div>
                             <div class="col-md-4 mt-0">
                                 <label for="ciudad_colombia" class="Colombia_C form-label mt-3 mb-3">Ciudad</label>
-                                <select id="ciudad_colombia" name="ciudad_colombia" class="Ciudad form-select">
+                                <select id="ciudad_colombia_edit" name="ciudad_colombia_edit" class="Ciudad form-select">
                                 </select>
                                 <label id="ciudad" for=""></label>
                             </div>
@@ -154,10 +159,6 @@ $resultado = $sentencia_select->fetchAll();*/
                                 <input type="submit" class="Nuevo_Cliente btn btn-primary" value="Agregar Cliente">
                             </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
                     </div>
                 </div>
             </div>
@@ -230,6 +231,8 @@ $resultado = $sentencia_select->fetchAll();*/
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="js/Jquery.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>

@@ -73,11 +73,24 @@ $(document).ready(function () {
             $('#ciudad').html("<span class='Mensaje_False'>*Selecciona una opcion</span>")
             $('#ciudad_colombia').css({"border":"1px solid rgb(255,0,0,0.7)"})
         }
-
     })
+
 
     /*$(".Nuevo").click(function(){
         location.href ="insert.php";
     })*/
 
 });
+
+    function prepare_edit(id,nombre,apellido,telefono,departamento,ciudad,correo){
+
+       $('#id_edit').val(id);
+       $('#Nombre_edit').val(nombre);
+       $('#Apellido_edit').val(apellido);
+       $('#Telefono_edit').val(telefono);
+       $('#departamento_colombia_edit').val(departamento);
+       $('#ciudad_colombia_edit').val(ciudad);
+       $('#Email_edit').val(correo);
+
+
+    }
